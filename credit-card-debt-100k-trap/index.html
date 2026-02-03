@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The $100K Trap: Credit Card Debt by Income | Infographica</title>
+    <meta name="description" content="Households earning $100k-$150k now carry the highest credit card debt-to-income ratios. High earners are overextended, not just low-income.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="The $100K Trap: Credit Card Debt by Income" />
+    <meta property="og:description" content="Households earning $100k-$150k carry the highest debt-to-income ratios. The new face of financial stress." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mazbenoscar.github.io/infographics/credit-card-debt-100k-trap/" />
+    <meta property="og:image" content="https://mazbenoscar.github.io/infographics/credit-card-debt-100k-trap/assets/thumbnail.png" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The $100K Trap: Credit Card Debt by Income" />
+    <meta name="twitter:description" content="Households earning $100k-$150k carry the highest debt-to-income ratios." />
+    <meta name="twitter:image" content="https://mazbenoscar.github.io/infographics/credit-card-debt-100k-trap/assets/thumbnail.png" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-shadow { box-shadow: 0 10px 40px -10px rgba(0,0,0,0.15); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    
+    <!-- HERO -->
+    <header class="bg-white border-b border-gray-200">
+        <div class="max-w-2xl mx-auto px-6 py-12 md:py-16">
+            <div class="text-center">
+                <span class="inline-block px-3 py-1 bg-red-100 text-red-700 text-xs font-semibold tracking-wide uppercase rounded-full mb-4">Finance • Data Story</span>
+                <h1 class="text-4xl md:text-5xl font-black mb-4 leading-tight">
+                    The <span class="gradient-text">$100K Trap</span>
+                </h1>
+                <p class="text-xl text-gray-600 font-medium mb-2">Credit Card Debt by Income Bracket</p>
+                <p class="text-gray-500">Who is actually struggling? The answer will surprise you.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-2xl mx-auto px-6 py-8 space-y-8">
+        
+        <!-- BEAT 1: The Hook -->
+        <section id="hook" class="bg-red-600 text-white rounded-2xl p-8 card-shadow">
+            <p class="text-2xl md:text-3xl font-bold leading-tight text-center">
+                "The six-figure earners are drowning too."
+            </p>
+        </section>
+        
+        <!-- BEAT 2: Setup / Context -->
+        <section id="context" class="bg-white rounded-2xl p-8 card-shadow">
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">The Scale</h2>
+            <div class="text-center">
+                <p class="text-6xl font-black text-gray-900 mb-2">$1.2T</p>
+                <p class="text-lg text-gray-600">Total U.S. credit card debt</p>
+                <p class="text-sm text-gray-400 mt-2">Record high post-pandemic • Source: NY Fed</p>
+            </div>
+        </section>
+        
+        <!-- BEAT 3: Mechanism -->
+        <section id="mechanism" class="bg-white rounded-2xl p-8 card-shadow">
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-6">The Invisible Trap</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span class="text-2xl">📈</span>
+                    </div>
+                    <p class="font-semibold">Income Rises</p>
+                </div>
+                <div class="text-2xl text-gray-300">→</div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span class="text-2xl">🏠</span>
+                    </div>
+                    <p class="font-semibold">Lifestyle Scales</p>
+                </div>
+                <div class="text-2xl text-gray-300">→</div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span class="text-2xl">💳</span>
+                    </div>
+                    <p class="font-semibold">Debt Accumulates</p>
+                </div>
+            </div>
+            <p class="text-center text-gray-500 mt-6 text-sm">
+                Lifestyle inflation outpaces income growth at every bracket
+            </p>
+        </section>
+        
+        <!-- BEAT 4: The Data Reveal (MAIN CHART) -->
+        <section id="data-reveal" class="bg-white rounded-2xl p-8 card-shadow">
+            <h2 class="text-sm font-bold text-red-600 uppercase tracking-wider mb-2">The Surprising Truth</h2>
+            <h3 class="text-2xl font-bold mb-6">Credit Card Debt as % of Income</h3>
+            
+            <div class="h-64 mb-6">
+                <canvas id="debtChart"></canvas>
+            </div>
+            
+            <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+                <p class="font-bold text-red-900">💡 Key Finding</p>
+                <p class="text-red-800">Households earning <strong>$100k-$150k</strong> carry the highest debt-to-income ratios of any bracket.</p>
+            </div>
+            
+            <p class="text-xs text-gray-400 mt-4">Source: Federal Reserve Survey of Consumer Finances, 2023</p>
+        </section>
+        
+        <!-- BEAT 5: The Turn -->
+        <section id="turn" class="bg-gray-900 text-white rounded-2xl p-8 card-shadow">
+            <h2 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">The Reframe</h2>
+            <p class="text-2xl md:text-3xl font-bold leading-tight">
+                High earners aren't winning—<br>
+                <span class="text-red-400">they're leveraged.</span>
+            </p>
+        </section>
+        
+        <!-- BEAT 6: Insight -->
+        <section id="insight" class="bg-white rounded-2xl p-8 card-shadow">
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">The Real Problem</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="text-center p-4 bg-gray-50 rounded-xl">
+                    <p class="text-4xl mb-2">❌</p>
+                    <p class="font-bold text-gray-900">Not an income problem</p>
+                </div>
+                <div class="text-center p-4 bg-green-50 rounded-xl">
+                    <p class="text-4xl mb-2">✅</p>
+                    <p class="font-bold text-green-800">It's a gap problem</p>
+                </div>
+            </div>
+            
+            <p class="text-center text-lg mt-6 font-medium">
+                The gap between <span class="text-red-600 font-bold">income</span> and <span class="text-red-600 font-bold">lifestyle expectations</span> widens as you earn more.
+            </p>
+        </section>
+        
+        <!-- BEAT 7: Watchpoint -->
+        <section id="watchpoint" class="bg-amber-50 border border-amber-200 rounded-2xl p-8">
+            <h2 class="text-sm font-bold text-amber-700 uppercase tracking-wider mb-4">⚠️ Watch This</h2>
+            <p class="text-lg font-medium text-amber-900">
+                Delinquency rates are climbing across <strong>all income brackets</strong>. The next wave of defaults may surprise us.
+            </p>
+            <div class="mt-4 flex items-center gap-2 text-amber-700">
+                <span>📊</span>
+                <span class="text-sm">TransUnion reports 90+ day delinquencies up 23% YoY</span>
+            </div>
+        </section>
+        
+        <!-- KEY FACTS -->
+        <section id="facts" class="bg-white rounded-2xl p-8 card-shadow">
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-6">Key Facts</h2>
+            <div class="space-y-4">
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold text-sm">1</span>
+                    <p class="text-gray-700">$100k-$150k earners: <strong>14.2%</strong> of income goes to credit card debt (highest ratio)</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                    <p class="text-gray-700">Average credit card balance for $100k+ households: <strong>$12,400</strong></p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold text-sm">3</span>
+                    <p class="text-gray-700">Top spending categories: Housing (32%), Transportation (18%), Food (13%)</p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-12">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <p class="text-sm">Data sources: Federal Reserve, TransUnion, Experian, NY Fed</p>
+            <p class="text-xs mt-2 text-gray-600">Created with Infographica • <a href="#" class="text-gray-400 hover:text-white">Share this story</a></p>
+        </div>
+    </footer>
+    
+    <!-- CHART SCRIPT -->
+    <script>
+        const ctx = document.getElementById('debtChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['$0-30k', '$30-50k', '$50-75k', '$75-100k', '$100-150k', '$150k+'],
+                datasets: [{
+                    label: 'Credit Card Debt as % of Income',
+                    data: [8.5, 9.2, 10.8, 12.1, 14.2, 11.5],
+                    backgroundColor: [
+                        '#e5e7eb',
+                        '#e5e7eb',
+                        '#e5e7eb',
+                        '#e5e7eb',
+                        '#dc2626', // Highlight the $100-150k bracket
+                        '#e5e7eb'
+                    ],
+                    borderColor: [
+                        '#d1d5db',
+                        '#d1d5db',
+                        '#d1d5db',
+                        '#d1d5db',
+                        '#991b1b',
+                        '#d1d5db'
+                    ],
+                    borderWidth: 2,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y + '% of income';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 16,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        },
+                        grid: {
+                            color: '#f3f4f6'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>
