@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Affordability: The Salary You Actually Need in 2025</title>
+    <meta name="description" content="In 2019, $78K income bought a median home. In 2025, you need $145K. Here's the data by metro area.">
+    
+    <!-- OG/Twitter Meta -->
+    <meta property="og:title" content="Housing Affordability: The Salary You Actually Need in 2025">
+    <meta property="og:description" content="2019: $78K → 2025: $145K. Wage growth: +25%. Home price + rate growth: +85%.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="<!-- TODO: Add canonical URL -->">
+    <meta property="og:image" content="<!-- TODO: Add thumbnail URL -->">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Housing Affordability: The Salary You Actually Need in 2025">
+    <meta name="twitter:description" content="2019: $78K → 2025: $145K. The math doesn't math.">
+    <meta name="twitter:image" content="<!-- TODO: Add thumbnail URL -->">
+    
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --accent-red: #ff3b30;
+            --accent-green: #34c759;
+            --text-primary: #ffffff;
+            --text-secondary: #8e8e93;
+            --border: #2c2c2e;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
+        .stat-flip {
+            font-variant-numeric: tabular-nums;
+            letter-spacing: -0.02em;
+        }
+        
+        .glow-red {
+            text-shadow: 0 0 40px rgba(255, 59, 48, 0.3);
+        }
+        
+        .divider-gradient {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+        
+        .card-hover {
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-red);
+        }
+        
+        .price-tag {
+            background: var(--accent-red);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+        
+        .affordable-tag {
+            background: var(--accent-green);
+            color: black;
+        }
+        
+        @media (max-width: 640px) {
+            .hero-stat {
+                font-size: 3rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    
+    <!-- HERO SECTION -->
+    <header class="px-6 py-16 md:py-24 max-w-4xl mx-auto text-center">
+        <div class="mb-6">
+            <span class="text-xs font-bold tracking-widest text-gray-500 uppercase">Housing Affordability Crisis</span>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-black leading-tight mb-8">
+            The Salary You Actually Need to Buy a Home in 2025
+        </h1>
+        
+        <!-- THE FLIP -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-12">
+            <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6 md:p-8">
+                <div class="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-2">2019</div>
+                <div class="stat-flip text-4xl md:text-5xl font-black text-white">$78,000</div>
+                <div class="text-sm text-gray-400 mt-2">Income needed for median home</div>
+                <div class="mt-4 text-xs text-gray-500">3.5% mortgage rate</div>
+            </div>
+            
+            <div class="bg-zinc-900 border-2 border-red-500 rounded-lg p-6 md:p-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">+86%</div>
+                <div class="text-sm text-red-400 font-semibold uppercase tracking-wide mb-2">2025</div>
+                <div class="stat-flip text-4xl md:text-5xl font-black text-white glow-red">$145,000</div>
+                <div class="text-sm text-gray-400 mt-2">Income needed for median home</div>
+                <div class="mt-4 text-xs text-gray-500">6.5% mortgage rate</div>
+            </div>
+        </div>
+        
+        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Wage growth: <span class="text-white font-bold">+25%</span>. Home price + rate growth: <span class="text-red-400 font-bold">+85%</span>. 
+            <span class="block mt-2 text-white">The math doesn't math.</span>
+        </p>
+    </header>
+    
+    <div class="divider-gradient max-w-4xl mx-auto"></div>
+    
+    <!-- THE MECHANISM -->
+    <section class="px-6 py-12 max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6">How Affordability Works</h2>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+            <p class="text-gray-300 leading-relaxed mb-4">
+                The Housing Affordability Index measures whether a typical family earns enough to qualify for a mortgage on a typical home. 
+                <strong class="text-white">100</strong> = median income has exactly enough. Above 100 = more than enough. Below 100 = priced out.
+            </p>
+            <div class="flex items-center gap-4 mt-6 pt-6 border-t border-zinc-800">
+                <div class="flex-1">
+                    <div class="text-3xl font-black text-green-500">100+</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-wide">Affordable</div>
+                </div>
+                <div class="text-gray-600">→</div>
+                <div class="flex-1">
+                    <div class="text-3xl font-black text-red-500">&lt;100</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-wide">Unaffordable</div>
+                </div>
+                <div class="flex-1 text-right">
+                    <div class="text-xs text-gray-500">2025 Status</div>
+                    <div class="text-sm font-bold text-red-400">17 states unaffordable</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- THE RATE SHOCK -->
+    <section class="px-6 py-12 max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6">The Rate Shock</h2>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+            <p class="text-gray-400 text-sm mb-6">30-year fixed mortgage rates over time</p>
+            
+            <div class="space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-20 text-sm font-semibold text-gray-500">2019</div>
+                    <div class="flex-1 h-8 bg-zinc-800 rounded overflow-hidden">
+                        <div class="h-full bg-green-500" style="width: 35%"></div>
+                    </div>
+                    <div class="w-16 text-right font-bold text-green-500">3.5%</div>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <div class="w-20 text-sm font-semibold text-gray-500">2021</div>
+                    <div class="flex-1 h-8 bg-zinc-800 rounded overflow-hidden">
+                        <div class="h-full bg-green-400" style="width: 29%"></div>
+                    </div>
+                    <div class="w-16 text-right font-bold text-green-400">2.9%</div>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <div class="w-20 text-sm font-semibold text-gray-500">2023</div>
+                    <div class="flex-1 h-8 bg-zinc-800 rounded overflow-hidden">
+                        <div class="h-full bg-red-500" style="width: 64%"></div>
+                    </div>
+                    <div class="w-16 text-right font-bold text-red-500">6.4%</div>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <div class="w-20 text-sm font-semibold text-white">2025</div>
+                    <div class="flex-1 h-8 bg-zinc-800 rounded overflow-hidden border border-red-500/30">
+                        <div class="h-full bg-red-600" style="width: 65%"></div>
+                    </div>
+                    <div class="w-16 text-right font-black text-white">~6.5%</div>
+                </div>
+            </div>
+            
+            <p class="text-xs text-gray-500 mt-6 pt-4 border-t border-zinc-800">
+                Same house. Same price. Payment up <span class="text-red-400 font-bold">40%+</span>.
+            </p>
+        </div>
+    </section>
+    
+    <!-- GEOGRAPHIC SPLIT -->
+    <section class="px-6 py-12 max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6">The Great Divide</h2>
+        <p class="text-gray-400 mb-8">
+            Coastal/tech hubs = unaffordable on median wages. Interior/Rust Belt/South = still accessible.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- MOST AFFORDABLE -->
+            <div>
+                <h3 class="text-sm font-bold text-green-500 uppercase tracking-wide mb-4 flex items-center gap-2">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Top 5 Most Affordable Markets
+                </h3>
+                <div class="space-y-3">
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 card-hover">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="font-bold">Pittsburgh, PA</div>
+                                <div class="text-xs text-gray-500">Median home: ~$215K</div>
+                            </div>
+                            <span class="affordable-tag">$62K</span>
+                        </div>
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 card-hover">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="font-bold">Cleveland, OH</div>
+                                <div class="text-xs text-gray-500">Median home: ~$225K</div>
+                            </div>
+                            <span class="affordable-tag">$65K</span>
+                        </div>
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 card-hover">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="font-bold">St. Louis, MO</div>
+                                <div class="text-xs text-gray-500">Median home: ~$260K</div>
+                            </div>
+                            <span class="affordable-tag">$75K</span>
+                        </div>
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 card-hover">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="font-bold">Detroit, MI</div>
+                                <div class="text-xs text-gray-500">Median home: ~$240K</div>
+                            </div>
+                            <span class="affordable-tag">$70K</span>
+                        </div>
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 card-hover">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="font-bold">Oklahoma City, OK</div>
+                                <div class="text-xs text-gray-500">Median home: ~$255K</div>
+                            </div>
+                            <span class="affordable-tag">$74K</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-600 mt-3">Income needed to qualify for median-priced home (2025)</p>
+            </div>
+            
+            <!-- LEAST AFFORDABLE -->
+            <div>
+                <h3 class="text-sm font-bold text-red-500 uppercase tracking-wide mb-4 flex items-center gap-2">
+                    <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                    Top 5 Least Affordable Markets
+                </h3>
+                <div class="space-y-3">
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 card-hover">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="font-bold">San Jose, CA</div>
+                                <div class="text-xs text-gray-500">Median home: ~$1.4M</div>
+                            </div>
+                            <span class="price-tag">$340K</span>
+                        </div>
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 card-hover">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="font-bold">San Francisco, CA</div>
+                                <div class="text-xs text-gray-500">Median home: ~$1.2M</div>
+                            </div>
+                            <span class="price-tag">$295K</span>
+                        </div>
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 card-hover">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="font-bold">Los Angeles, CA</div>
+                                <div class="text-xs text-gray-500">Median home: ~$890K</div>
+                            </div>
+                            <span class="price-tag">$218K</span>
+                        </div>
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 card-hover">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="font-bold">San Diego, CA</div>
+                                <div class="text-xs text-gray-500">Median home: ~$910K</div>
+                            </div>
+                            <span class="price-tag">$225K</span>
+                        </div>
+                    </div>
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg p-4 card-hover">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="font-bold">Miami, FL</div>
+                                <div class="text-xs text-gray-500">Median home: ~$620K</div>
+                            </div>
+                            <span class="price-tag">$152K</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-600 mt-3">Income needed to qualify for median-priced home (2025)</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="divider-gradient max-w-4xl mx-auto"></div>
+    
+    <!-- THE GAP -->
+    <section class="px-6 py-16 max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-8">The New Reality</h2>
+        
+        <div class="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto">
+            <div class="p-4">
+                <div class="stat-flip text-2xl md:text-3xl font-black text-gray-400">$59K</div>
+                <div class="text-xs text-gray-500 uppercase tracking-wide mt-2">Median Wage</div>
+            </div>
+            <div class="p-4">
+                <div class="stat-flip text-2xl md:text-3xl font-black text-white">$145K</div>
+                <div class="text-xs text-gray-500 uppercase tracking-wide mt-2">Required</div>
+            </div>
+            <div class="p-4">
+                <div class="stat-flip text-2xl md:text-3xl font-black text-red-500">$86K</div>
+                <div class="text-xs text-gray-500 uppercase tracking-wide mt-2">Gap</div>
+            </div>
+        </div>
+        
+        <p class="text-gray-400 mt-8 max-w-xl mx-auto">
+            Single median-income buyers are priced out nationwide. 
+            The new homebuyer class: dual-income professional households or remote workers 
+            <span class="text-white">geographically arbitraging location</span>.
+        </p>
+    </section>
+    
+    <!-- DATA SOURCES -->
+    <footer class="px-6 py-12 max-w-4xl mx-auto border-t border-zinc-800">
+        <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-4">Data Sources</h3>
+        <ul class="text-xs text-gray-400 space-y-2">
+            <li>
+                <a href="https://www.nar.realtor/research-and-statistics/housing-statistics/housing-affordability-index" 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="text-red-400 hover:text-red-300 underline underline-offset-2 transition-colors">
+                    National Association of Realtors — Housing Affordability Index (2024-2025)
+                </a>
+            </li>
+            <li>
+                <a href="https://www.atlantafed.org/research/data-and-tools/home-ownership-affordability-monitor" 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="text-red-400 hover:text-red-300 underline underline-offset-2 transition-colors">
+                    Federal Reserve Bank of Atlanta — Home Ownership Affordability Monitor (HOAM)
+                </a>
+            </li>
+            <li>
+                <a href="https://www.huduser.gov/portal/pdredge/pdr-edge-frm-asst-sec-072425.html" 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="text-red-400 hover:text-red-300 underline underline-offset-2 transition-colors">
+                    HUD — Housing Affordability Across the Country (Q1 2025)
+                </a>
+            </li>
+            <li>
+                <a href="https://www.freddiemac.com/pmms" 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="text-red-400 hover:text-red-300 underline underline-offset-2 transition-colors">
+                    Freddie Mac — Primary Mortgage Market Survey (2019-2025)
+                </a>
+            </li>
+            <li>
+                <a href="https://www.zillow.com/research/data/" 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="text-red-400 hover:text-red-300 underline underline-offset-2 transition-colors">
+                    Zillow — Home Value Index (Metro-level estimates, 2025)
+                </a>
+            </li>
+        </ul>
+        <p class="text-xs text-gray-600 mt-6 pt-4 border-t border-zinc-800">
+            Methodology: Qualifying income calculated using standard 28% front-end debt-to-income ratio, 
+            20% down payment assumption, and metro-specific property tax/insurance estimates. 
+            Home price data reflects Q4 2024/Q1 2025 estimates.
+        </p>
+    </footer>
+    
+</body>
+</html>
